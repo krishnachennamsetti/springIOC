@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+<!-- dependency injection congiguration -->
+	<!-- <bean id="employeeBean" class="com.krishna.spring.EmployeeDetails">
+		<property name="empName" value="Krishna Chennamsetti"></property>
+		<property name="gender" value="Male"></property>
+		<property name="age" value="27"></property>
+		<property name="salary" value="15000"></property>
+		<property name="empAddress" ref="address"></property>
+	</bean>
+	
+    <bean id="address" class="com.krishna.spring.Address">
+		<property name="doorNo" value="14/13/63"></property>
+		<property name="area" value="Roypeta"></property>
+		<property name="city" value="Narsapur"></property>
+		<property name="country" value="India"></property>
+		<property name="pinCode" value="534275"></property>
+	</bean>  -->
+<!-- end -->
+
+
+
+<!-- constructor injection example with primitive values -->
+
+  <!-- <bean id="address" class="com.krishna.spring.Address">
+		<constructor-arg value="14-13-63" ></constructor-arg>  
+        <constructor-arg value="Sonoo"></constructor-arg>  
+	</bean> -->
+<!-- end -->
+
+<!-- dependency injection with object types -->
+	 <bean id="employeeBean" class="com.krishna.spring.EmployeeDetails">
+		<constructor-arg value="krishna" ></constructor-arg>
+		<constructor-arg>  
+           <ref bean="address"/>  
+        </constructor-arg>
+		<constructor-arg value="male" ></constructor-arg>
+		<constructor-arg value="27" ></constructor-arg>
+		<constructor-arg value="15100" ></constructor-arg>
+		
+	</bean>
+	
+    <bean id="address" class="com.krishna.spring.Address">
+		<constructor-arg value="doorNo" > </constructor-arg>
+		<constructor-arg value="area" > </constructor-arg>
+		<constructor-arg value="city" > </constructor-arg>
+		<constructor-arg value="country" > </constructor-arg>
+		<constructor-arg value="pinCode" > </constructor-arg>
+	</bean>  
+<!-- end -->
+
+
+
+
+</beans>  
